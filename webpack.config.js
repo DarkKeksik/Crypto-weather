@@ -21,22 +21,17 @@ module.exports = {
     extensions: [".ts", ".js", ".tsx", ".jsx", ".json"],
     alias: {
       "@/app": path.resolve(__dirname, "./src/app/App"),
-
-      "@/pages/added-message": path.resolve(
+      "@/pages": path.resolve(__dirname, "./src/pages"),
+      "@/widgets": path.resolve(__dirname, "./src/widgets"),
+      "@/features": path.resolve(
         __dirname,
-        "./src/pages/added-message",
+        "./src/features"
       ),
-      "@/pages/list-messages": path.resolve(
+      "@/entities": path.resolve(
         __dirname,
-        "./src/pages/list-messages",
+        "./src/entities"
       ),
-
-      "@/shared/ui": path.resolve(__dirname, "./ui"),
-      "@/shared/api": path.resolve(__dirname, "./src"),
-      "@/shared/mockAdapter": path.resolve(
-        __dirname,
-        "./mockAdapter",
-      ),
+      "@/shared": path.resolve(__dirname, "./src/shared"),
     },
   },
   module: {
@@ -54,13 +49,13 @@ module.exports = {
         __dirname,
         "./public",
         "HTMLTemplate",
-        "index.html",
+        "index.html"
       ),
       showErrors: isDev,
       favicon: path.resolve(
         __dirname,
         "./public",
-        faviconName,
+        faviconName
       ),
       templateParameters: {
         title: "Messages list app | FSD",

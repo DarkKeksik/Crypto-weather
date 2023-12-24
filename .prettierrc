@@ -3,9 +3,9 @@
   "singleQuote": false,
   "jsxSingleQuote": false,
   "bracketSpacing": true,
-  "trailingComma": "all",
+  "trailingComma": "es5",
   "printWidth": 60,
   "tabWidth": 2,
   "arrowParens": "avoid",
-  "endOfLine": "lf"
+  "endOfLine": "auto"
 }
