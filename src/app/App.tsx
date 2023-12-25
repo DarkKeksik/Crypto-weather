@@ -1,16 +1,17 @@
-import { useEffect, type FC } from "react"
+import { type FC } from "react"
+import { BrowserRouter } from "react-router-dom"
 
-import { mockAdapter, requests } from "@/shared/api"
+import { mockAdapter } from "@/shared/api"
+import Routes from "./Pages"
 
 mockAdapter()
 
 const App: FC = () => {
-  useEffect(() => {
-    requests.readNewsCoindesk()
-    requests.createNewsCoindesk()
-  }, [])
-
-  return <p>d21d2d</p>
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  )
 }
 
 export default App

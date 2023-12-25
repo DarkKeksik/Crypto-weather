@@ -1,3 +1,6 @@
+/**
+ * Bundle optimization needed ( webpack.optimize.UglifyJsPlugin )
+ */
 const path = require("path")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
 const {
@@ -71,4 +74,13 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    hot: true,
+    port: 9000,
+    historyApiFallback: true,
+  },
 }
