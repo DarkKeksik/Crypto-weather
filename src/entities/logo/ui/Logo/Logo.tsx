@@ -1,4 +1,4 @@
-import { FC } from "react"
+import { type FC } from "react"
 
 import { Icons } from "@/shared/ui"
 import * as Styled from "./Logo.styled"

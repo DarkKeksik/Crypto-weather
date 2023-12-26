@@ -6,7 +6,7 @@ type TIconPickaxe = {
 }
 
 export const IconPickaxe: FC<TIconPickaxe> = ({
-  size = "84",
+  size = 84,
   color = "#4ef6ff",
 }) => {
   return (

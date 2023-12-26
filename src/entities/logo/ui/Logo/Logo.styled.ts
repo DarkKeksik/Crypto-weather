@@ -13,6 +13,8 @@ export const Title = styled.p`
   font-size: 1.8rem;
   font-weight: 900;
   letter-spacing: 2px;
+  width: max-content;
+  user-select: none;
 
   background: -webkit-linear-gradient(
     left,
