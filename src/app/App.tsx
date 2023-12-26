@@ -3,14 +3,18 @@ import { BrowserRouter } from "react-router-dom"
 
 import { mockAdapter } from "@/shared/api"
 import Routes from "./Pages"
+import GlobalStyles from "./global.styles"
 
 mockAdapter()
 
 const App: FC = () => {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <>
+      <GlobalStyles />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </>
   )
 }
 

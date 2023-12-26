@@ -16,6 +16,9 @@
   "plugins": ["react"],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/array-type": "off",
+    "@typescript-eslint/consistent-type-definitions": "type",
+    "@typescript-eslint/no-confusing-void-expression": "warn",
     "prettier/prettier": ["warn"]
   }
 }
