@@ -1,6 +1,6 @@
 import { type FC } from "react"
 
-import { Logo } from "@/entities/logo/ui"
+import { Logo } from "@/entities"
 
 export const ListNews: FC = () => {
   return (

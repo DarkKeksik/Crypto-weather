@@ -1,6 +1,6 @@
 import { type FC } from "react"
 
-import { Icons } from "@/shared/ui"
+import { Icons } from "@/shared"
 import * as Styled from "./Logo.styled"
 
 type TLogo = {

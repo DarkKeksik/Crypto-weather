@@ -1,14 +1,16 @@
 import { useRoutes } from "react-router-dom"
+
+import { dataLinks } from "@/entities"
 import { AddNews, ListNews, Page404 } from "@/pages"
 
 const Routes: any = () =>
   useRoutes([
     {
-      path: "/",
+      path: dataLinks.pageMain,
       element: <ListNews />,
     },
     {
-      path: "/add-news",
+      path: dataLinks.PageAddNews,
       element: <AddNews />,
     },
     {

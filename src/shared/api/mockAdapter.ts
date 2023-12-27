@@ -1,7 +1,6 @@
 import MockAdapter from "axios-mock-adapter"
 
-import { endpoints } from "../config"
-import { axiosCustom } from "../lib"
+import { endpoints, axiosCustom } from "@/shared"
 
 const axiosMockAdapter: any = (skip: boolean) => {
   if (skip) {

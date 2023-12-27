@@ -1,5 +1,4 @@
-import { axiosCustom } from "../lib"
-import { endpoints } from "../config"
+import { axiosCustom, endpoints } from "@/shared"
 
 /**
  * C - Created

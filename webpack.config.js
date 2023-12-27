@@ -23,7 +23,7 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx", ".json"],
     alias: {
-      "@/app": path.resolve(__dirname, "./src/app/App"),
+      "@/app": path.resolve(__dirname, "./src/app"),
       "@/pages": path.resolve(__dirname, "./src/pages"),
       "@/widgets": path.resolve(__dirname, "./src/widgets"),
       "@/features": path.resolve(
@@ -51,7 +51,7 @@ module.exports = {
       template: path.resolve(
         __dirname,
         "./public",
-        "HTMLTemplate",
+        "HTMLTemplates",
         "index.html"
       ),
       showErrors: isDev,

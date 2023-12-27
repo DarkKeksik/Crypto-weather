@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { axiosConfig } from "../config"
+import { axiosConfig } from "@/shared"
 
 const axiosCustom = axios.create(
   axiosConfig.axiosConfigDefault
