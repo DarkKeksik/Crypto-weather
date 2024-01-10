@@ -1,5 +1,11 @@
 import { type FC } from "react"
 
+import { Header } from "@/widgets"
+
 export const AddNews: FC = () => {
-  return <div>AddMessage</div>
+  return (
+    <div>
+      <Header />
+    </div>
+  )
 }

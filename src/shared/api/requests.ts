@@ -1,4 +1,19 @@
-import { axiosCustom, endpoints } from "@/shared"
+/**
+ * @TODO should move to a file for objects entities
+ */
+
+import {
+  authKeys,
+  urlsUtils,
+  axiosCustom,
+  endpoints,
+} from "@/shared"
+
+type TCallback = () => void
+type TCallbackResolve = (data: Array<any>) => void
+type TQuery = string
+
+const defaultParamsRead = "&items=1"
 
 /**
  * C - Created
@@ -6,30 +21,80 @@ import { axiosCustom, endpoints } from "@/shared"
  * U - Update
  * D - Delete
  */
-export const createNewsCoindesk: any = async () => {
+export const createNewsCoindesk = async (
+  extraQueryFields: TQuery,
+  callbackFinally?: TCallback,
+  callbackError?: TCallback
+) =>
   await axiosCustom
-    .post(endpoints.cryptoNewsCreate)
-    .then(data => console.log(data))
-    .catch(data => console.error(data))
-}
+    .post(
+      `${endpoints.cryptoNewsCreate}${extraQueryFields}`
+    )
+    .then(({ data }) => data)
+    .catch(() => {
+      callbackError && callbackError()
+    })
+    .finally(() => {
+      callbackFinally && callbackFinally()
+    })
 
-export const readNewsCoindesk: any = async () => {
+export const readNewsCoindesk = async (
+  extraQueryFields: TQuery,
+  callbackResolve: TCallbackResolve,
+  callbackFinally?: TCallback,
+  callbackError?: TCallback
+) =>
   await axiosCustom
-    .get(endpoints.cryptoNewsCoindesk)
-    .then(data => console.log(data))
-    .catch(data => console.error(data))
-}
+    .get(
+      urlsUtils.buildUrlWithToken(
+        authKeys.cryptonewsApi,
+        endpoints.cryptoNewsCoindesk,
+        defaultParamsRead,
+        extraQueryFields
+      )
+    )
+    .then(({ data }) => {
+      callbackResolve && callbackResolve(data)
+    })
+    .catch(() => {
+      callbackError && callbackError()
+    })
+    .finally(() => {
+      callbackFinally && callbackFinally()
+    })
 
-export const updateNewsCoindesk: any = async () => {
+export const updateNewsCoindesk = async (
+  extraQueryFields: TQuery,
+  callbackFinally?: TCallback,
+  callbackError?: TCallback
+) =>
   await axiosCustom
-    .patch(endpoints.cryptoNewsUpdate)
-    .then(data => console.log(data))
-    .catch(data => console.error(data))
-}
+    .patch(
+      `
+        ${endpoints.cryptoNewsUpdate}${extraQueryFields}
+        `
+    )
+    .then(({ data }) => data)
+    .catch(() => {
+      callbackError && callbackError()
+    })
+    .finally(() => {
+      callbackFinally && callbackFinally()
+    })
 
-export const deleteNewsCoindesk: any = async () => {
+export const deleteNewsCoindesk = async (
+  extraQueryFields: TQuery,
+  callbackFinally?: TCallback,
+  callbackError?: TCallback
+) =>
   await axiosCustom
-    .delete(endpoints.cryptoNewsDelete)
-    .then(data => console.log(data))
-    .catch(data => console.error(data))
-}
+    .delete(
+      `${endpoints.cryptoNewsDelete}${extraQueryFields}`
+    )
+    .then(({ data }) => data)
+    .catch(() => {
+      callbackError && callbackError()
+    })
+    .finally(() => {
+      callbackFinally && callbackFinally()
+    })

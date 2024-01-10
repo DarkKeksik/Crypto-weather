@@ -18,17 +18,17 @@ const axiosMockAdapter: any = (skip: boolean) => {
     .reply(200, { test: "News list coindesk" })
 
     .onPost(
-      `${endpoints.rootCryptoNews}${endpoints.cryptoNewsCreate}`
+      `${endpoints.rootCryptoNews.full}${endpoints.cryptoNewsCreate}`
     )
     .reply(200, { test: "Created news" })
 
     .onPatch(
-      `${endpoints.rootCryptoNews}${endpoints.cryptoNewsUpdate}`
+      `${endpoints.rootCryptoNews.full}${endpoints.cryptoNewsUpdate}`
     )
     .reply(200, { test: "Update news" })
 
     .onDelete(
-      `${endpoints.rootCryptoNews}${endpoints.cryptoNewsDelete}`
+      `${endpoints.rootCryptoNews.full}${endpoints.cryptoNewsDelete}`
     )
     .reply(200, { test: "Delete news" })
 

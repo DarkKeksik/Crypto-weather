@@ -1,9 +1,7 @@
 import axios from "axios"
 
-import { axiosConfig } from "@/shared"
+import axiosConfigDefault from "../config/axiosConfig"
 
-const axiosCustom = axios.create(
-  axiosConfig.axiosConfigDefault
-)
+const axiosCustom = axios.create({ ...axiosConfigDefault })
 
 export default axiosCustom

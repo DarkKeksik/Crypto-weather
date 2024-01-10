@@ -19,3 +19,8 @@ export const Title = styled.p`
   font-weight: 400;
   text-align: center;
 `
+
+export const Text = styled.p`
+  display: flex;
+  gap: 5px;
+`

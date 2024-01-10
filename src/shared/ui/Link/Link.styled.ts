@@ -1,14 +1,12 @@
 import styled from "styled-components"
 
-export const Link = styled.a`
-  margin: 0 0.4rem;
-  padding: 0 2px;
-  border-bottom: 1px solid;
+export const Link = styled.a<{ isActive?: boolean }>`
   text-decoration: none;
-  color: #f9ce21;
   transition-duration: 0.3s;
+  color: ${({ isActive }) =>
+    isActive ? "#4ef6ff" : "white"};
 
   &:hover {
-    color: #51f7fd;
+    color: #4ef6ff;
   }
 `

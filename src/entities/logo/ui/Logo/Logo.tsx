@@ -10,7 +10,7 @@ type TLogo = {
 const Logo: FC<TLogo> = ({ isShort = false }) => {
   return (
     <Styled.WrapLogo>
-      <Icons.IconPickaxe />
+      <Icons.IconPickaxe size={50} />
       {!isShort && <Styled.Title>cryptonews</Styled.Title>}
     </Styled.WrapLogo>
   )

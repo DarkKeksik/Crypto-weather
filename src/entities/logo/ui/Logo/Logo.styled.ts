@@ -10,17 +10,20 @@ export const WrapLogo = styled.div`
 
 export const Title = styled.p`
   text-transform: uppercase;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 900;
   letter-spacing: 2px;
   width: max-content;
   user-select: none;
-
-  background: -webkit-linear-gradient(
-    left,
+  background: linear-gradient(
+    to right,
     rgb(78, 247, 255) 0%,
-    rgb(255, 205, 27)
+    white
   );
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
 `

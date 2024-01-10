@@ -1,13 +1,23 @@
-import { endpoints } from "@/shared"
+import { rootCryptoNews, rootRapidApi } from "./endpoints"
 
-export const authKey =
-  "b0a40b6f8dmsh7191941810eedc9p111a2djsnf203f4ecdd7e"
+export const authKeys = {
+  rapidApi:
+    "b0a40b6f8dmsh7191941810eedc9p111a2djsnf203f4ecdd7e",
+  cryptonewsApi: "l3euy62pj9szzapptdd49q8frjccgnoavua03pdu",
+} as const
 
-export const axiosConfigDefault = {
-  baseURL: endpoints.rootCryptoNews,
+const axiosConfigDefault = {
+  baseURL: rootCryptoNews.full,
+  timeout: 10000,
+} as const
+
+export const axiosConfigRapidApi = {
+  baseURL: rootCryptoNews.full,
   headers: {
-    "X-RapidAPI-Key": authKey,
-    "X-RapidAPI-Host": "crypto-news16.p.rapidapi.com",
+    "X-RapidAPI-Key": authKeys.rapidApi,
+    "X-RapidAPI-Host": rootRapidApi.short,
   },
   timeout: 10000,
 } as const
+
+export default axiosConfigDefault

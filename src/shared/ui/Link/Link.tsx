@@ -5,10 +5,22 @@ import * as Styled from "./Link.styled"
 
 type TLink = {
   linkHref?: string
+  target?: string
+  isActive?: boolean
 } & PropsWithChildren
 
-const Link: FC<TLink> = ({ children, linkHref = "/" }) => (
-  <Styled.Link as={NavLink} to={linkHref}>
+const Link: FC<TLink> = ({
+  children,
+  linkHref = "/",
+  target,
+  isActive,
+}) => (
+  <Styled.Link
+    as={NavLink}
+    to={linkHref}
+    target={target}
+    isActive={isActive}
+  >
     {children}
   </Styled.Link>
 )
