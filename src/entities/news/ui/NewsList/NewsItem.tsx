@@ -21,6 +21,7 @@ type TNewsItem = {
   sentiment?: string
   topics?: Array<string>
   source_name?: string
+  tickers: Array<string>
 }
 
 const NewsItem: FC<TNewsItem> = ({
@@ -31,6 +32,7 @@ const NewsItem: FC<TNewsItem> = ({
   image_url,
   sentiment,
   topics,
+  tickers,
   source_name,
 }) => {
   const [showModal, setShowModal] = useState(false)
@@ -50,11 +52,21 @@ const NewsItem: FC<TNewsItem> = ({
       <Styled.NewsMain>
         {image_url && (
           <Styled.Image source={image_url}>
-            <Styled.TagPanel>
-              <Styled.Tag status={sentimentLowerCase}>
-                {sentimentLowerCase}
-              </Styled.Tag>
-            </Styled.TagPanel>
+            <Styled.WrapPanels>
+              <Styled.ListCryptocurrencies>
+                {tickers &&
+                  tickers.map(ticker => (
+                    <Styled.Cryptocurrency>
+                      {ticker}
+                    </Styled.Cryptocurrency>
+                  ))}
+              </Styled.ListCryptocurrencies>
+              <Styled.TagPanel>
+                <Styled.Tag status={sentimentLowerCase}>
+                  {sentimentLowerCase}
+                </Styled.Tag>
+              </Styled.TagPanel>
+            </Styled.WrapPanels>
           </Styled.Image>
         )}
 

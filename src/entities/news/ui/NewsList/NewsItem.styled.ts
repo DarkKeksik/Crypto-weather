@@ -1,8 +1,10 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 export const Image = styled.div<{ source: string }>`
   min-height: 12.5rem;
   width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
   background: url(${({ source }) => source || ""});
   background-position: center top;
   background-repeat: no-repeat;
@@ -43,36 +45,55 @@ export const NewsFooter = styled.footer`
 `
 
 export const Title = styled.p`
-  letter-spacing: 0.5px;
   max-width: 100%;
+  font-size: 1.3rem;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 1.2rem;
-  overflow: hidden;
+  letter-spacing: 0.5px;
   color: white;
 `
 
-export const TagPanel = styled.div`
+export const WrapPanels = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: right;
-  align-items: baseline;
-  height: 100%;
-  width: 100%;
-  padding: 0.5rem;
-  box-sizing: border-box;
+  justify-content: space-between;
+  gap: 1.5rem;
 `
+
+export const ListCryptocurrencies = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+  width: 100%;
+`
+
+export const Cryptocurrency = styled.p`
+  background: rgba(30, 35, 49, 0.9);
+  max-width: 100px;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.33) 4px 8px 5px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-weight: 700;
+  color: white;
+`
+
+export const TagPanel = styled.div``
 
 export const Tag = styled.p<{
   status: "positive" | "neutral" | "negative"
 }>`
   background: ${({ status }) => {
     if (status === "positive") {
-      return "#3be7c9"
+      return css`rgba(59, 231, 201, .9)`
     } else if (status === "neutral") {
-      return "#1e2331"
+      return css`rgba(30, 35, 49, .9)`
     } else {
-      return "#ad5252"
+      return css`rgba(173, 82, 82, .9)`
     }
   }};
   color: white;

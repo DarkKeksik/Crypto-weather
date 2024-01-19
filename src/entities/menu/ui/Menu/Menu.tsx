@@ -9,7 +9,9 @@ const Menu: FC = () => {
   return (
     <Styled.Wrap>
       {keysDataLinks.map(elem => (
-        <Link linkHref={elem.route}>{elem.title}</Link>
+        <Styled.Link as={Link} linkHref={elem.route}>
+          {elem.title}
+        </Styled.Link>
       ))}
     </Styled.Wrap>
   )

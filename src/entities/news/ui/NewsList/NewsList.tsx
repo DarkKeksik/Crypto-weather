@@ -86,6 +86,7 @@ const NewsList: FC = () => {
                   sentiment,
                   topics,
                   source_name,
+                  tickers,
                 },
                 id
               ) => (
@@ -100,6 +101,7 @@ const NewsList: FC = () => {
                       sentiment,
                       topics,
                       source_name,
+                      tickers,
                     }}
                   />
                 </Fragment>
