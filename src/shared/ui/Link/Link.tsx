@@ -1,4 +1,4 @@
-import { type FC, type PropsWithChildren } from "react"
+import type { FC, PropsWithChildren } from "react"
 import { NavLink } from "react-router-dom"
 
 import * as Styled from "./Link.styled"

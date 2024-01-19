@@ -7,7 +7,8 @@
   "extends": [
     "standard-with-typescript",
     "plugin:react/recommended",
-    "plugin:eslint-plugin-prettier/recommended"
+    "plugin:eslint-plugin-prettier/recommended",
+    "plugin:@conarti/feature-sliced/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -15,7 +16,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/react-in-jsx-scope": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "type",
     "@typescript-eslint/no-confusing-void-expression": "warn",

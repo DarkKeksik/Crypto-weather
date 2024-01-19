@@ -13,6 +13,13 @@ type TCallback = () => void
 type TCallbackResolve = (data: Array<any>) => void
 type TQuery = string
 
+type TAxiosCustom = {
+  extraQueryFields?: TQuery
+  callbackResolve?: TCallbackResolve
+  callbackFinally?: TCallback
+  callbackError?: TCallback
+}
+
 const defaultParamsRead = "&items=1"
 
 /**
@@ -21,7 +28,7 @@ const defaultParamsRead = "&items=1"
  * U - Update
  * D - Delete
  */
-export const createNewsCoindesk = async (
+export const createNews = async (
   extraQueryFields: TQuery,
   callbackFinally?: TCallback,
   callbackError?: TCallback
@@ -38,17 +45,17 @@ export const createNewsCoindesk = async (
       callbackFinally && callbackFinally()
     })
 
-export const readNewsCoindesk = async (
-  extraQueryFields: TQuery,
-  callbackResolve: TCallbackResolve,
-  callbackFinally?: TCallback,
-  callbackError?: TCallback
-) =>
+export const readNewsAll = async ({
+  extraQueryFields,
+  callbackResolve,
+  callbackFinally,
+  callbackError,
+}: TAxiosCustom) =>
   await axiosCustom
     .get(
       urlsUtils.buildUrlWithToken(
         authKeys.cryptonewsApi,
-        endpoints.cryptoNewsCoindesk,
+        endpoints.cryptoNewsList,
         defaultParamsRead,
         extraQueryFields
       )
@@ -63,7 +70,7 @@ export const readNewsCoindesk = async (
       callbackFinally && callbackFinally()
     })
 
-export const updateNewsCoindesk = async (
+export const updateNews = async (
   extraQueryFields: TQuery,
   callbackFinally?: TCallback,
   callbackError?: TCallback
@@ -82,7 +89,7 @@ export const updateNewsCoindesk = async (
       callbackFinally && callbackFinally()
     })
 
-export const deleteNewsCoindesk = async (
+export const deleteNews = async (
   extraQueryFields: TQuery,
   callbackFinally?: TCallback,
   callbackError?: TCallback

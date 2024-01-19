@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
 
 export const Wrap = styled.div`
-  height: 65vh;
+  height: 60vh;
 `
 
 export const BgImage = styled.div<{ source?: string }>`

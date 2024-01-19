@@ -31,7 +31,7 @@ export const NewsHeader = styled.header`
 export const NewsMain = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.5rem;
   height: 100%;
   min-height: 9.375rem;
 `
@@ -39,25 +39,28 @@ export const NewsFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 `
 
 export const Title = styled.p`
+  letter-spacing: 0.5px;
   max-width: 100%;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   overflow: hidden;
   color: white;
 `
 
 export const TagPanel = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: right;
+  align-items: baseline;
   height: 100%;
   width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
 `
 
 export const Tag = styled.p<{
@@ -80,17 +83,41 @@ export const Tag = styled.p<{
   box-shadow: 4px 8px 5px #00000054;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  border-radius: 2.5rem;
+  border-radius: 5px;
   box-sizing: border-box;
   font-weight: 700;
 `
 
 export const Description = styled.article`
   color: #bcbcbc;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.5px;
+
+  &::first-letter {
+    color: #d94257;
+  }
+`
+
+export const CreationInfo = styled.div`
   font-size: 0.875rem;
 `
-export const Data = styled.p`
-  font-size: 0.875rem;
+
+export const DataTime = styled.div`
+  display: flex;
+  gap: 5px;
+`
+
+export const Date = styled.p`
+  color: white;
+`
+
+export const Time = styled.p`
+  text-align: center;
+  color: white;
+`
+
+export const Author = styled.p`
   color: white;
 `
 

@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import type { FC } from "react"
 
 import { Logo } from "@/entities"
 import { Description, Link } from "@/shared"

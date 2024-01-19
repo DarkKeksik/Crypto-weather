@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import type { FC } from "react"
 
 type TIconPickaxe = {
   size?: string | number
@@ -7,7 +7,7 @@ type TIconPickaxe = {
 
 export const IconPickaxe: FC<TIconPickaxe> = ({
   size = 30,
-  color = "#4ef6ff",
+  color = "#000000",
 }) => {
   return (
     <svg

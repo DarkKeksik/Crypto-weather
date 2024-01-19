@@ -39,6 +39,9 @@ export const cryptoNewsCoinTelegraph = `${cryptoNewsList}=&source=cointelegraph`
 export const cryptoNewsCoinJournal = `${cryptoNewsList}&source=coinjournal`
 export const cryptoNewsCryptoNinjas = `${cryptoNewsList}&source=cryptoninjas`
 export const cryptoNewsYahooFinance = `${cryptoNewsList}&source=yahoo`
+export const cryptoNewsSortingByMood = `&sentiment=`
+export const cryptoNewsSortingByDate = `&sortby=`
+export const cryptoNewsSortingBySource = `&source=`
 
 export const cryptoNewsCreate = "/news/create"
 export const cryptoNewsDelete = "/news/delete"

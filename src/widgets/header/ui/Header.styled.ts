@@ -10,5 +10,5 @@ export const Wrap = styled.div`
   box-shadow: 0 3px 10px #00000059;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 9;
 `

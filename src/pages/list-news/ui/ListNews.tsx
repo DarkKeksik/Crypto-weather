@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import type { FC } from "react"
 
 import { Header } from "@/widgets"
 import { NewsList, GreetingBlock } from "@/entities"

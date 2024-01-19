@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import type { FC } from "react"
 
 import { Icons } from "@/shared"
 import * as Styled from "./Logo.styled"
@@ -10,8 +10,10 @@ type TLogo = {
 const Logo: FC<TLogo> = ({ isShort = false }) => {
   return (
     <Styled.WrapLogo>
-      <Icons.IconPickaxe size={50} />
-      {!isShort && <Styled.Title>cryptonews</Styled.Title>}
+      <Icons.IconPickaxe color="white" size={50} />
+      {!isShort && (
+        <Styled.Title>cryptoweather</Styled.Title>
+      )}
     </Styled.WrapLogo>
   )
 }

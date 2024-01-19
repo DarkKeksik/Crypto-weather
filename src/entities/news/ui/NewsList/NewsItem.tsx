@@ -1,6 +1,14 @@
-import { useMemo, type FC, useEffect } from "react"
+import { useMemo, useState } from "react"
+import { createPortal } from "react-dom"
+import type { FC } from "react"
 
-import { Link, dateUtils } from "@/shared"
+import {
+  Link,
+  dateUtils,
+  Button,
+  Modal,
+  Icons,
+} from "@/shared"
 import * as Styled from "./NewsItem.styled"
 
 type TNewsItem = {
@@ -12,6 +20,7 @@ type TNewsItem = {
   image_url?: string
   sentiment?: string
   topics?: Array<string>
+  source_name?: string
 }
 
 const NewsItem: FC<TNewsItem> = ({
@@ -22,8 +31,10 @@ const NewsItem: FC<TNewsItem> = ({
   image_url,
   sentiment,
   topics,
+  source_name,
 }) => {
-  const [day, mounth, year] = useMemo(
+  const [showModal, setShowModal] = useState(false)
+  const [day, mounth, year, hours, minutes] = useMemo(
     () => date && dateUtils.parseDateFromString(date),
     [date]
   )
@@ -51,14 +62,45 @@ const NewsItem: FC<TNewsItem> = ({
       </Styled.NewsMain>
 
       <Styled.NewsFooter>
-        <Styled.Link
-          as={Link}
-          target="__blank"
-          linkHref={news_url}
+        <Button
+          onClick={() => {
+            setShowModal(true)
+          }}
         >
-          More details
-        </Styled.Link>
-        <Styled.Data>{`${day}.${mounth}.${year}`}</Styled.Data>
+          <Icons.IconMessage color="white" size={20} />
+          Discussion
+        </Button>
+
+        {showModal &&
+          createPortal(
+            <Modal
+              hasFooter={false}
+              title={`Discussion "${title}"`}
+              onClose={() => setShowModal(false)}
+            />,
+            document.body
+          )}
+
+        <Styled.CreationInfo>
+          <Styled.Author>
+            by{" "}
+            <Styled.Link
+              isActive
+              as={Link}
+              target="__blank"
+              linkHref={news_url}
+            >
+              {source_name}
+            </Styled.Link>
+          </Styled.Author>
+
+          <Styled.DataTime>
+            <Styled.Date>{`${day}.${mounth}.${year}`}</Styled.Date>
+            <Styled.Time>
+              at {hours}:{minutes}
+            </Styled.Time>
+          </Styled.DataTime>
+        </Styled.CreationInfo>
       </Styled.NewsFooter>
     </Styled.NewsItem>
   )

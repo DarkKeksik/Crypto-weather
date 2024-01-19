@@ -4,7 +4,7 @@ export const dataLinks = {
     route: "/",
   },
   PageAddNews: {
-    title: "Add news",
-    route: "/add-news",
+    title: "Profile",
+    route: "/my-profile",
   },
 } as const

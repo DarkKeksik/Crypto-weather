@@ -1,82 +1,124 @@
-import {
-  type FC,
-  useEffect,
-  useState,
-  Fragment,
-} from "react"
+import { type FC, useState, Fragment } from "react"
 
-import { requests, Preloader, Pagination } from "@/shared"
+import {
+  Preloader,
+  Pagination,
+  hooksCommons,
+  axiosCustom,
+  endpoints,
+} from "@/shared"
+
 import NewsItem from "./NewsItem"
+import SortingPanel from "../SortingPanel/SortingPanel"
+import {
+  dataSortingByDate,
+  dataSortingByMood,
+  dataSortingBySource,
+} from "../../config/dataSorting"
+import { hooks } from "../../"
 import * as Styled from "./NewsList.styled"
 
 const NewsList: FC = () => {
   const [page, setPage] = useState(1)
-  const [news, setNews] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    setIsLoading(true)
-    ;(async () => {
-      await requests.readNewsCoindesk(
-        `&items=3&page=${page}`,
-        data => setNews(data),
-        () => setIsLoading(false)
-      )
-    })()
-  }, [page])
+  const {
+    setValDate,
+    setValMoods,
+    setValSource,
+    urlSorting,
+  } = hooks.useFilterNews(page)
 
-  if (isLoading) {
-    return (
-      <Styled.WrapPreloader>
-        <Preloader />
-        <Pagination
-          totalPages={news?.total_pages}
-          pageActive={page}
-          onPagination={setPage}
-        />
-      </Styled.WrapPreloader>
-    )
+  const [newsList, loading, error] = hooksCommons.useAxios(
+    `${endpoints.cryptoNewsList}${urlSorting}`,
+    axiosCustom
+  )
+
+  const dataFilterPanel = {
+    date: {
+      onChange: (newValue: string) => {
+        setValDate(newValue)
+        setPage(1)
+      },
+      dataItems: dataSortingByDate,
+      placeholder: "By date ...",
+    },
+    source: {
+      onChange: (newValue: string) => {
+        setValSource(newValue)
+        setPage(1)
+      },
+      dataItems: dataSortingBySource,
+      placeholder: "By source ...",
+    },
+    mood: {
+      onChange: (newValue: string) => {
+        setValMoods(newValue)
+        setPage(1)
+      },
+      dataItems: dataSortingByMood,
+      placeholder: "By mood ...",
+    },
   }
 
   return (
-    <>
-      <Styled.NewsList>
-        {news &&
-          news.data.map(
-            (
-              {
-                title,
-                text,
-                date,
-                news_url,
-                image_url,
-                sentiment,
-                topics,
-              },
-              id
-            ) => (
-              <Fragment key={id}>
-                <NewsItem
-                  {...{
-                    title,
-                    text,
-                    date,
-                    news_url,
-                    image_url,
-                    sentiment,
-                    topics,
-                  }}
-                />
-              </Fragment>
-            )
-          )}
-      </Styled.NewsList>
-      <Pagination
-        totalPages={news?.total_pages}
+    <Styled.Wrap>
+      <SortingPanel dataSortingPanel={dataFilterPanel} />
+
+      {loading ? (
+        <Styled.WrapPreloader>
+          <Preloader />
+        </Styled.WrapPreloader>
+      ) : error ? (
+        <Styled.ErrorBlock>
+          Something wrong, we can't get news, try again!
+        </Styled.ErrorBlock>
+      ) : newsList && newsList.data.length > 0 ? (
+        <Styled.NewsList>
+          {newsList &&
+            newsList.data.map(
+              (
+                {
+                  title,
+                  text,
+                  date,
+                  news_url,
+                  image_url,
+                  sentiment,
+                  topics,
+                  source_name,
+                },
+                id
+              ) => (
+                <Fragment key={id}>
+                  <NewsItem
+                    {...{
+                      title,
+                      text,
+                      date,
+                      news_url,
+                      image_url,
+                      sentiment,
+                      topics,
+                      source_name,
+                    }}
+                  />
+                </Fragment>
+              )
+            )}
+        </Styled.NewsList>
+      ) : (
+        <Styled.EmptyBlock>
+          We haven't result for this query
+        </Styled.EmptyBlock>
+      )}
+
+      <Styled.Pagination
+        as={Pagination}
+        totalPages={newsList?.total_pages}
         pageActive={page}
         onPagination={setPage}
       />
-    </>
+    </Styled.Wrap>
   )
 }
 
