@@ -1,15 +1,15 @@
 import type { FC } from "react"
 
-import { Header } from "@/widgets"
-import { NewsList, GreetingBlock } from "@/entities"
+import { Header, CryptoWeathers } from "@/widgets"
+import { NewsList } from "@/entities"
 import { WrapPageContent } from "@/shared"
 
 export const ListNews: FC = () => {
   return (
     <>
       <Header />
-      <GreetingBlock />
-      <WrapPageContent>
+      <CryptoWeathers />
+      <WrapPageContent bgColor="#101820">
         <NewsList />
       </WrapPageContent>
     </>

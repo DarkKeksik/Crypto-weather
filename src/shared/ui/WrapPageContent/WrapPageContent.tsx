@@ -1,10 +1,15 @@
 import { FC, PropsWithChildren } from "react"
 import * as Styled from "./WrapPageContent.styled"
 
-export const PageWrap: FC<PropsWithChildren> = ({
+type TPageWrap = {
+  bgColor?: string
+} & PropsWithChildren
+
+export const PageWrap: FC<TPageWrap> = ({
+  bgColor,
   children,
 }) => (
-  <Styled.PageWrap>
+  <Styled.PageWrap bgColor={bgColor}>
     <Styled.PageAlign>{children}</Styled.PageAlign>
   </Styled.PageWrap>
 )

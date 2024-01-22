@@ -62,7 +62,8 @@ export const WrapPanels = styled.div`
 
 export const ListCryptocurrencies = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, max-content);
+  grid-template-rows: max-content;
   grid-gap: 5px;
   width: 100%;
 `
@@ -74,7 +75,7 @@ export const Cryptocurrency = styled.p`
   padding: 0.2rem 0.5rem;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.33) 4px 8px 5px;
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -113,7 +114,7 @@ export const Description = styled.article`
   color: #bcbcbc;
   font-size: 1rem;
   line-height: 1.5rem;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 
   &::first-letter {
     color: #d94257;

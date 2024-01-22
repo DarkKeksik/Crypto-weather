@@ -3,6 +3,7 @@ import * as Styled from "./LiningBg.styled"
 
 type TLiningBg = {
   source?: string
+  bgColor?: string
 } & PropsWithChildren
 
 const LiningBg: FC<TLiningBg> = ({ children, source }) => {

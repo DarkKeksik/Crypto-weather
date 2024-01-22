@@ -1,14 +1,19 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
-export const PageWrap = styled.div`
+export const PageWrap = styled.div<{ bgColor?: string }>`
   box-sizing: border-box;
-  background: #101820;
+  background: ${({ bgColor }) =>
+    bgColor
+      ? css`
+          ${bgColor}
+        `
+      : "inherit "};
 `
 
 export const PageAlign = styled.div`
   max-width: 1400px;
   width: 100%;
   margin: 0px auto;
-  padding: 1rem 4rem;
+  padding: 0 4rem;
   box-sizing: border-box;
 `

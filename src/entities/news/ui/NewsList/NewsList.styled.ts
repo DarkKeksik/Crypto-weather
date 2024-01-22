@@ -29,7 +29,7 @@ export const WrapPreloader = styled.div`
 export const NewsList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 1.5rem;
   min-height: ${minHeightNewsValue};
 
   @media screen and (max-width: 1024px) {

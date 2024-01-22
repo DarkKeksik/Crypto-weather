@@ -3,13 +3,15 @@ import * as Styled from "./Description.styled"
 
 type TDescription = {
   color?: string
+  bgColor?: string
 } & PropsWithChildren
 
 const Description: FC<TDescription> = ({
   children,
+  bgColor,
   color,
 }) => (
-  <Styled.Description color={color}>
+  <Styled.Description bgColor={bgColor} color={color}>
     {children}
   </Styled.Description>
 )

@@ -8,7 +8,7 @@ export const Page404: FC = () => {
   return (
     <Styled.WrapPage>
       <Logo />
-      <Description color="white">
+      <Description>
         <Styled.Title>Oyy sheep, 404!</Styled.Title>
         <Styled.Text>
           But, don't worry and try again from

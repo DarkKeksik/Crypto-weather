@@ -70,6 +70,10 @@ const Pagination: FC<TTablePanel> = ({
   const pagesListArr = getPagesList()
   const [isButtonStart, isButtonLast] = isVisibleButtons()
 
+  if (!totalPages) {
+    return null
+  }
+
   return (
     <Styled.Pagination>
       {isButtonStart && (
