@@ -1,7 +1,12 @@
 import { FC } from "react"
 
 import { RainComponent } from "@/entities"
-import { LiningBg, WrapPageContent, Button } from "@/shared"
+import {
+  WrapPageContent,
+  LiningBg,
+  TagsPanel,
+  Button,
+} from "@/shared"
 import * as Styled from "./CryptoWeathers.styled"
 import cryptoHouseImg from "./cryptoHouse.png"
 
@@ -23,20 +28,18 @@ const CryptoWeathers: FC = () => {
           <Button>Try to free!</Button>
         </Styled.WrapDescription>
         <LiningBg source={cryptoHouseImg}>
-          <Styled.AlignRight>
-            <Styled.PanelMood>
-              <Styled.PanelMoodItem>
-                BTC
-              </Styled.PanelMoodItem>
-              <Styled.PanelMoodItem>
-                Negative
-              </Styled.PanelMoodItem>
-              <Styled.PanelMoodItem>
-                7 days
-              </Styled.PanelMoodItem>
-            </Styled.PanelMood>
-          </Styled.AlignRight>
-          <RainComponent />
+          <RainComponent>
+            <Styled.AlignRight>
+              <TagsPanel
+                viewType="col"
+                tags={[
+                  { type: "neutral", textVal: "BTC" },
+                  { type: "negative", textVal: "Negative" },
+                  { type: "neutral", textVal: "7 days" },
+                ]}
+              />
+            </Styled.AlignRight>
+          </RainComponent>
         </LiningBg>
       </Styled.WrapCryptoWeathers>
     </WrapPageContent>

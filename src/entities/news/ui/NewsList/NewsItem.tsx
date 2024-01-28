@@ -8,6 +8,9 @@ import {
   Button,
   Modal,
   Icons,
+  Tag,
+  TTag,
+  TagsPanel,
 } from "@/shared"
 import * as Styled from "./NewsItem.styled"
 
@@ -43,6 +46,11 @@ const NewsItem: FC<TNewsItem> = ({
 
   const sentimentLowerCase = sentiment?.toLowerCase()
 
+  const dataTags = tickers.map(ticker => ({
+    textVal: ticker,
+    type: "neutral",
+  }))
+
   return (
     <Styled.NewsItem>
       <Styled.NewsHeader>
@@ -53,19 +61,12 @@ const NewsItem: FC<TNewsItem> = ({
         {image_url && (
           <Styled.Image source={image_url}>
             <Styled.WrapPanels>
-              <Styled.ListCryptocurrencies>
-                {tickers &&
-                  tickers.map(ticker => (
-                    <Styled.Cryptocurrency>
-                      {ticker}
-                    </Styled.Cryptocurrency>
-                  ))}
-              </Styled.ListCryptocurrencies>
-              <Styled.TagPanel>
-                <Styled.Tag status={sentimentLowerCase}>
-                  {sentimentLowerCase}
-                </Styled.Tag>
-              </Styled.TagPanel>
+              <TagsPanel viewType="row" tags={dataTags} />
+              <Tag
+                type={sentimentLowerCase as TTag.TTagTypes}
+              >
+                {sentimentLowerCase}
+              </Tag>
             </Styled.WrapPanels>
           </Styled.Image>
         )}

@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 
 export const Image = styled.div<{ source: string }>`
   min-height: 12.5rem;
@@ -58,56 +58,6 @@ export const WrapPanels = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 1.5rem;
-`
-
-export const ListCryptocurrencies = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, max-content);
-  grid-template-rows: max-content;
-  grid-gap: 5px;
-  width: 100%;
-`
-
-export const Cryptocurrency = styled.p`
-  background: rgba(30, 35, 49, 0.9);
-  max-width: 100px;
-  width: 100%;
-  padding: 0.2rem 0.5rem;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.33) 4px 8px 5px;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-weight: 700;
-  color: white;
-`
-
-export const TagPanel = styled.div``
-
-export const Tag = styled.p<{
-  status: "positive" | "neutral" | "negative"
-}>`
-  background: ${({ status }) => {
-    if (status === "positive") {
-      return css`rgba(59, 231, 201, .9)`
-    } else if (status === "neutral") {
-      return css`rgba(30, 35, 49, .9)`
-    } else {
-      return css`rgba(173, 82, 82, .9)`
-    }
-  }};
-  color: white;
-  max-width: 100px;
-  width: 100%;
-  padding: 0.2rem 0.5rem;
-  text-align: center;
-  box-shadow: 4px 8px 5px #00000054;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-weight: 700;
 `
 
 export const Description = styled.article`
