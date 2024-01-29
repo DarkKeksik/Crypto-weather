@@ -13,17 +13,22 @@ const FilterPanel: FC<TFilterPanel> = ({
   return (
     <Styled.FilterPanel>
       {dataSortingPanel &&
-        Object.keys(dataSortingPanel).map(filterName => (
-          <Select
-            onChange={dataSortingPanel[filterName].onChange}
-            dataItems={
-              dataSortingPanel[filterName].dataItems
-            }
-            placeholder={
-              dataSortingPanel[filterName].placeholder
-            }
-          />
-        ))}
+        Object.keys(dataSortingPanel).map(
+          (filterName, id) => (
+            <Select
+              key={id}
+              onChange={
+                dataSortingPanel[filterName].onChange
+              }
+              dataItems={
+                dataSortingPanel[filterName].dataItems
+              }
+              placeholder={
+                dataSortingPanel[filterName].placeholder
+              }
+            />
+          )
+        )}
     </Styled.FilterPanel>
   )
 }

@@ -86,8 +86,9 @@ const Pagination: FC<TTablePanel> = ({
       )}
 
       <Styled.Items>
-        {pagesListArr.map(item => (
+        {pagesListArr.map((item, id) => (
           <Styled.Item
+            key={id}
             onClick={() => onPagination(item)}
             isActive={item === pageActive}
           >

@@ -4,6 +4,21 @@ export const Wrap = styled.div`
   display: flex;
   position: relative;
   height: 100%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      #101820b3,
+      #10182000,
+      transparent 100px
+    );
+    z-index: 999;
+  }
 `
 
 export const Canvas = styled.canvas`

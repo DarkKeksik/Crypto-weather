@@ -43,8 +43,10 @@ const Select: FC<TSelect> = ({
         id={`${id}_${idUnique}`}
         ref={selectRef}
       >
-        {dataItems?.map(({ value, text }) => (
-          <option value={value}>{text}</option>
+        {dataItems?.map(({ value, text }, id) => (
+          <option key={id} value={value}>
+            {text}
+          </option>
         ))}
       </Styled.SelectHide>
 
@@ -57,8 +59,9 @@ const Select: FC<TSelect> = ({
 
         <Styled.WrapAnimation>
           <Styled.Values isActive={isActive}>
-            {dataItems?.map(({ text, value }) => (
+            {dataItems?.map(({ text, value }, id) => (
               <Styled.OptionCustom
+                key={id}
                 onClick={() => onChangeSelect(text, value)}
               >
                 {text}
