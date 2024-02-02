@@ -5,9 +5,7 @@ export { default as Preloader } from "./ui/Preloader/Preloader"
 export { default as Description } from "./ui/Description/Description"
 export { default as Link } from "./ui/Link/Link"
 export { default as TagsPanel } from "./ui/TagsPanel/TagsPanel"
-export * as TTagsPanel from "./ui/TagsPanel/TagsPanel.types"
 export { default as Tag } from "./ui/Tag/Tag"
-export * as TTag from "./ui/Tag/Tag.types"
 export { default as Modal } from "./ui/Modal/Modal"
 export { default as Button } from "./ui/Button/Button"
 export { default as Select } from "./ui/Select/Select"
@@ -15,6 +13,10 @@ export { default as LiningBg } from "./ui/LiningBg/LiningBg"
 export { default as Pagination } from "./ui/Pagination/Pagination"
 export { default as WrapPageContent } from "./ui/WrapPageContent/WrapPageContent"
 export * as Icons from "./ui/Icons"
+
+export * as TypesTagsPanel from "./ui/TagsPanel/TagsPanel.types"
+export * as TypesTag from "./ui/Tag/Tag.types"
+export * as TypesSelect from "./ui/Select/Select.types"
 
 /**
  * Lib

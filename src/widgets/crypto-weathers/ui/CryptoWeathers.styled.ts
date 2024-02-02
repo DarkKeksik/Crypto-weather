@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Description } from "@/shared"
 
-export const WrapCryptoWeathers = styled.div`
+export const WrapCryptoWeathers = styled.section`
   display: grid;
   grid-template-columns: 0.8fr 1fr;
   gap: 1.5rem;

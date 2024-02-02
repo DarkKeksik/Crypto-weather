@@ -1,4 +1,4 @@
-import { type FC, useState, Fragment } from "react"
+import { type FC, useState } from "react"
 
 import {
   Preloader,
@@ -90,21 +90,20 @@ const NewsList: FC = () => {
                 },
                 id
               ) => (
-                <Fragment key={id}>
-                  <NewsItem
-                    {...{
-                      title,
-                      text,
-                      date,
-                      news_url,
-                      image_url,
-                      sentiment,
-                      topics,
-                      source_name,
-                      tickers,
-                    }}
-                  />
-                </Fragment>
+                <NewsItem
+                  key={id}
+                  {...{
+                    title,
+                    text,
+                    date,
+                    news_url,
+                    image_url,
+                    sentiment,
+                    topics,
+                    source_name,
+                    tickers,
+                  }}
+                />
               )
             )}
         </Styled.NewsList>

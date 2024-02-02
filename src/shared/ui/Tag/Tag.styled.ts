@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components"
-import { TTag } from "@/shared"
 
-export const Tag = styled.p<TTag.TType>`
+import type { TypesTag } from "@/shared"
+
+export const Tag = styled.p<TypesTag.TType>`
   color: white;
   max-width: 100px;
   width: 100%;

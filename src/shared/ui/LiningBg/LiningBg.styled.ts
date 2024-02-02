@@ -21,7 +21,7 @@ export const BgImage = styled.div<{
   top: 0;
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 3;
 `
 
 export const Content = styled.div`

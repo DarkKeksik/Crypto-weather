@@ -1,21 +1,10 @@
-import { useRef, useId, useState, useEffect } from "react"
+import { useRef, useId, useState } from "react"
 import type { FC } from "react"
 
+import { TypesSelect } from "@/shared"
 import * as Styled from "./Select.styled"
 
-type TItems = {
-  text: string
-  value: string
-}
-
-type TSelect = {
-  placeholder?: string
-  id?: string
-  dataItems?: Array<TItems>
-  onChange?: (val: string) => void
-}
-
-const Select: FC<TSelect> = ({
+const Select: FC<TypesSelect.TSelect> = ({
   dataItems,
   onChange,
   id = "idSelect",

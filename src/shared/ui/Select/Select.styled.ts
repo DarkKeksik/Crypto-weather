@@ -2,8 +2,9 @@ import styled from "styled-components"
 
 export const Wrap = styled.div`
   user-select: none;
+  min-width: 8rem;
   max-width: max-content;
-  min-width: 6.25rem;
+  width: 100%;
   cursor: pointer;
 `
 

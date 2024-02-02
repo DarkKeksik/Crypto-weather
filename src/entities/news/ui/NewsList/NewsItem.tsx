@@ -9,9 +9,11 @@ import {
   Modal,
   Icons,
   Tag,
-  TTag,
   TagsPanel,
 } from "@/shared"
+
+import type { TypesTag } from "@/shared"
+
 import * as Styled from "./NewsItem.styled"
 
 type TNewsItem = {
@@ -63,7 +65,9 @@ const NewsItem: FC<TNewsItem> = ({
             <Styled.WrapPanels>
               <TagsPanel viewType="row" tags={dataTags} />
               <Tag
-                type={sentimentLowerCase as TTag.TTagTypes}
+                type={
+                  sentimentLowerCase as TypesTag.TTagTypes
+                }
               >
                 {sentimentLowerCase}
               </Tag>
