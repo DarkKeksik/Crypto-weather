@@ -19,10 +19,9 @@ const SelectCryptocurrency: FC<TypesSelect.TSelect> = ({
   )
   return (
     <Select
+      {...propsOther}
       dataItems={dataTickersSelect}
       onChange={onChange}
-      placeholder="Select cryptocurrency"
-      {...propsOther}
     />
   )
 }

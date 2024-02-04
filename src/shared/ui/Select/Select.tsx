@@ -10,8 +10,9 @@ const Select: FC<TypesSelect.TSelect> = ({
   id = "idSelect",
   placeholder,
 }) => {
-  const [selectedValue, setSelectedValue] =
-    useState(placeholder)
+  const [selectedValue, setSelectedValue] = useState(
+    placeholder || dataItems[0].text
+  )
   const [isActive, setIsActive] = useState(false)
   const selectRef = useRef(null)
   const idUnique = useId()

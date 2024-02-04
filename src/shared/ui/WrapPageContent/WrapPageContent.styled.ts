@@ -1,6 +1,8 @@
 import styled, { css } from "styled-components"
 
-export const PageWrap = styled.div<{ bgColor?: string }>`
+export const PageWrap = styled.section<{
+  bgColor?: string
+}>`
   box-sizing: border-box;
   background: ${({ bgColor }) =>
     bgColor

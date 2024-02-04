@@ -5,7 +5,6 @@ const minHeightNewsValue = "50vh"
 export const Wrap = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
 `
 
 export const ErrorBlock = styled.div`

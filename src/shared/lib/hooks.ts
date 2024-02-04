@@ -27,21 +27,23 @@ export const useAxios = (
     url: urlWithToken,
   }
 
+  const getData = async () => {
+    await axiosClient(axiosConfig)
+      .then(({ data }) => {
+        setData(data)
+      })
+      .catch(() => {
+        setError(true)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }
+
   useEffect(() => {
     setLoading(true)
     setError(false)
-    ;(async () => {
-      await axiosClient(axiosConfig)
-        .then(({ data }) => {
-          setData(data)
-        })
-        .catch(() => {
-          setError(true)
-        })
-        .finally(() => {
-          setLoading(false)
-        })
-    })()
+    getData()
   }, [url])
 
   return [data, loading, error]

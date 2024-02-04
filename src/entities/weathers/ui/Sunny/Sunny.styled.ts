@@ -25,10 +25,9 @@ export const Sunny = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 
   /**
   * @TODO Temporary solution for vanta.js
   */
-  transform: rotate(180deg);
 `

@@ -4,6 +4,7 @@ export const Wrap = styled.div`
   display: flex;
   position: relative;
   height: 100%;
+  width: 100%;
 
   &:after {
     content: "";
@@ -17,7 +18,7 @@ export const Wrap = styled.div`
       #10182000,
       transparent 100px
     );
-    z-index: 999;
+    z-index: 2;
   }
 `
 
@@ -25,5 +26,4 @@ export const Canvas = styled.canvas`
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
 `

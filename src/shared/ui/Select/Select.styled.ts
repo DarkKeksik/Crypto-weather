@@ -52,6 +52,7 @@ export const ValueSelected = styled.div`
   padding: 0.3rem 0.6rem;
   border-radius: 2px;
   transition-duration: 0.3s;
+  text-align: center;
 
   &:first-letter {
     text-transform: capitalize;

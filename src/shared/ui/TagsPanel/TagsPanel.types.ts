@@ -12,8 +12,11 @@ export type TTag = {
   textVal?: string
 } & TType
 
-export type TTagsPanel =
-  | {
-      tags: Array<TTag>
-    }
-  | TViewType
+export type Tsizes = "s" | "m" | "l"
+
+export type Tsize = { size: Tsizes }
+
+export type TTagsPanel = {
+  tags: Array<TTag>
+} & TViewType &
+  Partial<Tsize>

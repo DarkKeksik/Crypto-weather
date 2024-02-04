@@ -1,7 +1,7 @@
 import type { FC } from "react"
 
 import { Select } from "@/shared"
-import * as Styled from "./SortingPanel.styled"
+import * as Styled from "./FilterPanel.styled"
 
 type TFilterPanel = {
   dataSortingPanel: any

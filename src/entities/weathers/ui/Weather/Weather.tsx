@@ -1,6 +1,8 @@
 import { lazy, Suspense } from "react"
 import type { FC } from "react"
 
+import * as Styled from "./Weather.styled"
+
 import { Preloader } from "@/shared"
 import { TWeather } from "./Weather.types"
 
@@ -16,13 +18,35 @@ const Weather: FC<TWeather> = ({
   const WeatherByType = () => {
     switch (typeWeather) {
       case "rain":
-        return <RainComponent>{children}</RainComponent>
+        return (
+          <RainComponent>
+            <Styled.WrapChildren>
+              {children}
+            </Styled.WrapChildren>
+          </RainComponent>
+        )
       case "fog":
-        return <FogComponent>{children}</FogComponent>
+        return (
+          <FogComponent>
+            <Styled.WrapChildren>
+              {children}
+            </Styled.WrapChildren>
+          </FogComponent>
+        )
       case "sunny":
-        return <SunnyComponent>{children}</SunnyComponent>
+        return (
+          <SunnyComponent>
+            <Styled.WrapChildren>
+              {children}
+            </Styled.WrapChildren>
+          </SunnyComponent>
+        )
       default:
-        return children
+        return (
+          <Styled.WrapChildren>
+            {children}
+          </Styled.WrapChildren>
+        )
     }
   }
 

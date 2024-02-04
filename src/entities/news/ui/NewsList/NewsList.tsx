@@ -9,7 +9,7 @@ import {
 } from "@/shared"
 
 import NewsItem from "./NewsItem"
-import SortingPanel from "../SortingPanel/SortingPanel"
+import FilterPanel from "../FilterPanel/FilterPanel"
 import {
   dataSortingByDate,
   dataSortingByMood,
@@ -62,7 +62,7 @@ const NewsList: FC = () => {
 
   return (
     <Styled.Wrap>
-      <SortingPanel dataSortingPanel={dataFilterPanel} />
+      <FilterPanel dataSortingPanel={dataFilterPanel} />
 
       {loading ? (
         <Styled.WrapPreloader>
