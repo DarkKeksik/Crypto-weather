@@ -11,8 +11,8 @@ export const readNewsFiltered = async (
     )
     .then(({ data }) => data)
     .catch(() => {
-      callbackError && callbackError()
+      callbackError?.()
     })
     .finally(() => {
-      callbackFinally && callbackFinally()
+      callbackFinally?.()
     })

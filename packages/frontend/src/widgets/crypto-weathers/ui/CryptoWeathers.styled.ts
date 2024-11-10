@@ -1,5 +1,4 @@
 import styled from "styled-components"
-
 import { Description } from "@/shared"
 import cryptoHouseImg from "./cryptoHouse.png"
 

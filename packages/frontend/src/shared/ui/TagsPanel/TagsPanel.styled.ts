@@ -1,10 +1,9 @@
 import styled, { css } from "styled-components"
-
 import {
-  TType,
-  TViewType,
-  Tsize,
-  Tsizes,
+  type TType,
+  type TViewType,
+  type Tsize,
+  type Tsizes,
 } from "./TagsPanel.types"
 
 const getStyledTagSize = (size: Tsizes) => {

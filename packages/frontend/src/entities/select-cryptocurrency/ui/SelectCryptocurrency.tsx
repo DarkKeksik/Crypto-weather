@@ -1,6 +1,5 @@
 import { useMemo } from "react"
 import type { FC } from "react"
-
 import type { TypesSelect } from "@/shared"
 import { Select } from "@/shared"
 import dataTickers from "../config/tickers.json"

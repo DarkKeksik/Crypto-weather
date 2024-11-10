@@ -1,5 +1,4 @@
-import { FC } from "react"
-
+import { type FC } from "react"
 import { routing, Link } from "@/shared"
 import * as Styled from "./Menu.styled"
 

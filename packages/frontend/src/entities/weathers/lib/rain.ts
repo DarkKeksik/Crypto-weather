@@ -26,7 +26,7 @@ export const rainPaint = canvas => {
       })
     }
 
-    let particles = []
+    const particles = []
     for (let b = 0; b < maxParts; b++) {
       particles[b] = init[b]
     }

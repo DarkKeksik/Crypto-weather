@@ -1,5 +1,4 @@
 import type { FC } from "react"
-
 import * as Styled from "./Pagination.styled"
 
 type TTablePanel = {
@@ -78,7 +77,11 @@ const Pagination: FC<TTablePanel> = ({
     <Styled.Pagination>
       {isButtonStart && (
         <>
-          <Styled.Item onClick={() => onPagination(1)}>
+          <Styled.Item
+            onClick={() => {
+              onPagination(1)
+            }}
+          >
             1
           </Styled.Item>
           <p>...</p>
@@ -89,7 +92,9 @@ const Pagination: FC<TTablePanel> = ({
         {pagesListArr.map((item, id) => (
           <Styled.Item
             key={id}
-            onClick={() => onPagination(item)}
+            onClick={() => {
+              onPagination(item)
+            }}
             isActive={item === pageActive}
           >
             {item}
@@ -101,7 +106,9 @@ const Pagination: FC<TTablePanel> = ({
         <>
           <p>...</p>
           <Styled.Item
-            onClick={() => onPagination(totalPages)}
+            onClick={() => {
+              onPagination(totalPages)
+            }}
           >
             {totalPages}
           </Styled.Item>

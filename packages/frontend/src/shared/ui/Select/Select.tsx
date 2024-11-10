@@ -1,7 +1,6 @@
 import { useRef, useId, useState } from "react"
 import type { FC } from "react"
-
-import { TypesSelect } from "@/shared"
+import { type TypesSelect } from "@/shared"
 import * as Styled from "./Select.styled"
 
 const Select: FC<TypesSelect.TSelect> = ({
@@ -42,7 +41,9 @@ const Select: FC<TypesSelect.TSelect> = ({
 
       <Styled.SelectCustom>
         <Styled.ValueSelected
-          onClick={() => setIsActive(!isActive)}
+          onClick={() => {
+            setIsActive(!isActive)
+          }}
         >
           {selectedValue}
         </Styled.ValueSelected>
@@ -52,7 +53,9 @@ const Select: FC<TypesSelect.TSelect> = ({
             {dataItems?.map(({ text, value }, id) => (
               <Styled.OptionCustom
                 key={id}
-                onClick={() => onChangeSelect(text, value)}
+                onClick={() => {
+                  onChangeSelect(text, value)
+                }}
               >
                 {text}
               </Styled.OptionCustom>

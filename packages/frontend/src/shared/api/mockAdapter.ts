@@ -1,5 +1,4 @@
 import MockAdapter from "axios-mock-adapter"
-
 import { endpoints, axiosCustom } from "@/shared"
 
 const axiosMockAdapter: any = (skip: boolean) => {

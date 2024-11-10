@@ -9,7 +9,9 @@
   "scripts": {
     "buildDev": "cross-env NODE_ENV=development webpack",
     "buildProd": "cross-env NODE_ENV=production webpack",
-    "lint": "tsc --noEmit",
+    "tsx": "tsc --noEmit",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lintFix": "eslint --fix",
     "develop": "webpack serve --no-client-overlay --open"
   },
   "devDependencies": {

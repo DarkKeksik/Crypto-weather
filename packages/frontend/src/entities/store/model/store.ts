@@ -9,5 +9,7 @@ type TStore = {
 
 export const useStore = create<TStore>(set => ({
   news: null,
-  setNews: newNews => set(() => ({ news: newNews })),
+  setNews: newNews => {
+    set(() => ({ news: newNews }))
+  },
 }))

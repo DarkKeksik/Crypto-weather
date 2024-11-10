@@ -50,7 +50,7 @@ export const readNewsAll = async ({
   callbackResolve,
   callbackFinally,
   callbackError,
-}: TAxiosCustom) =>
+}: TAxiosCustom) => {
   await axiosCustom
     .get(
       urlsUtils.buildUrlWithToken(
@@ -69,6 +69,7 @@ export const readNewsAll = async ({
     .finally(() => {
       callbackFinally && callbackFinally()
     })
+}
 
 export const updateNews = async (
   extraQueryFields: TQuery,

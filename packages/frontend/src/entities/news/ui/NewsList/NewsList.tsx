@@ -1,5 +1,4 @@
 import { type FC, useState } from "react"
-
 import {
   Preloader,
   Pagination,
@@ -7,15 +6,14 @@ import {
   axiosCustom,
   endpoints,
 } from "@/shared"
-
-import NewsItem from "./NewsItem"
-import FilterPanel from "../FilterPanel/FilterPanel"
+import { hooks } from "../../"
 import {
   dataSortingByDate,
   dataSortingByMood,
   dataSortingBySource,
 } from "../../config/dataSorting"
-import { hooks } from "../../"
+import FilterPanel from "../FilterPanel/FilterPanel"
+import NewsItem from "./NewsItem"
 import * as Styled from "./NewsList.styled"
 
 const NewsList: FC = () => {
@@ -74,10 +72,24 @@ const NewsList: FC = () => {
         </Styled.ErrorBlock>
       ) : newsList && newsList.data.length > 0 ? (
         <Styled.NewsList>
-          {newsList &&
-            newsList.data.map(
-              (
-                {
+          {newsList?.data.map(
+            (
+              {
+                title,
+                text,
+                date,
+                news_url,
+                image_url,
+                sentiment,
+                topics,
+                source_name,
+                tickers,
+              },
+              id
+            ) => (
+              <NewsItem
+                key={id}
+                {...{
                   title,
                   text,
                   date,
@@ -87,25 +99,10 @@ const NewsList: FC = () => {
                   topics,
                   source_name,
                   tickers,
-                },
-                id
-              ) => (
-                <NewsItem
-                  key={id}
-                  {...{
-                    title,
-                    text,
-                    date,
-                    news_url,
-                    image_url,
-                    sentiment,
-                    topics,
-                    source_name,
-                    tickers,
-                  }}
-                />
-              )
-            )}
+                }}
+              />
+            )
+          )}
         </Styled.NewsList>
       ) : (
         <Styled.EmptyBlock>

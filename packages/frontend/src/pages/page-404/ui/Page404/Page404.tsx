@@ -1,5 +1,4 @@
 import type { FC } from "react"
-
 import { Logo } from "@/entities"
 import { Description, Link } from "@/shared"
 import * as Styled from "./Page404.styled"

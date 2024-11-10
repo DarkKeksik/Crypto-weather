@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-
 import type { TypesTag } from "@/shared"
 
 export const Tag = styled.p<TypesTag.TType>`

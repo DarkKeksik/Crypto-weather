@@ -1,8 +1,6 @@
 import { useRoutes } from "react-router-dom"
-import { lazy } from "react"
-
-import { dataLinks } from "@/shared"
 import { AddNews, ListNews, Page404 } from "@/pages"
+import { dataLinks } from "@/shared"
 
 const Routes: any = () =>
   useRoutes([

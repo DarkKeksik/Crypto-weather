@@ -1,7 +1,6 @@
 import type { FC, PropsWithChildren } from "react"
 import { useRef, useEffect, useState } from "react"
 import FOG from "vanta/dist/vanta.fog.min.js"
-
 import * as Styled from "./Fog.styled"
 
 const Fog: FC<PropsWithChildren> = ({ children }) => {

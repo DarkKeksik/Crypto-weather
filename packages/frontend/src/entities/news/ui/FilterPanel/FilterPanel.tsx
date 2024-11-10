@@ -1,5 +1,4 @@
 import type { FC } from "react"
-
 import { Select } from "@/shared"
 import * as Styled from "./FilterPanel.styled"
 

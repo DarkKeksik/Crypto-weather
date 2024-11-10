@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react"
-import { createPortal } from "react-dom"
 import type { FC } from "react"
-
+import { createPortal } from "react-dom"
 import {
   Link,
   dateUtils,
@@ -11,9 +10,7 @@ import {
   Tag,
   TagsPanel,
 } from "@/shared"
-
 import type { TypesTag } from "@/shared"
-
 import * as Styled from "./NewsItem.styled"
 
 type TNewsItem = {
@@ -93,7 +90,9 @@ const NewsItem: FC<TNewsItem> = ({
             <Modal
               hasFooter={false}
               title={`Discussion "${title}"`}
-              onClose={() => setShowModal(false)}
+              onClose={() => {
+                setShowModal(false)
+              }}
             />,
             document.body
           )}

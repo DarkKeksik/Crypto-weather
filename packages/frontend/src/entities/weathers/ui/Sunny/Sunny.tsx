@@ -1,7 +1,6 @@
 import type { FC, PropsWithChildren } from "react"
 import { useRef, useEffect, useState } from "react"
 import CLOUDS from "vanta/dist/vanta.clouds.min.js"
-
 import * as Styled from "./Sunny.styled"
 
 const Sunny: FC<PropsWithChildren> = ({ children }) => {

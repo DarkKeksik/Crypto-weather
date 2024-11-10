@@ -1,6 +1,5 @@
 import type { FC, PropsWithChildren } from "react"
 import { useRef, useEffect } from "react"
-
 import { rainPaint } from "../../lib/rain"
 import * as Styled from "./Rain.styled"
 

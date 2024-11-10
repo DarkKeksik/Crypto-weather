@@ -1,8 +1,6 @@
 import { endpoints } from "@/shared"
 
-type TGetUrlSorting = {
-  [keys: string]: string
-}
+type TGetUrlSorting = Record<string, string>
 
 /**
  * @TODO need refactoring getUrlSorting

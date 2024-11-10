@@ -1,7 +1,6 @@
-import { FC } from "react"
-
-import { TTagsPanel } from "./TagsPanel.types"
+import { type FC } from "react"
 import * as Styled from "./TagsPanel.styled"
+import { type TTagsPanel } from "./TagsPanel.types"
 
 const TagsPanel: FC<TTagsPanel> = ({
   tags,

@@ -1,9 +1,7 @@
 import type { FC } from "react"
-
 import { Header, CryptoWeathers } from "@/widgets"
 import { NewsList } from "@/entities"
 import { WrapPageContent } from "@/shared"
-
 import * as Styled from "./ListNews.styled"
 
 export const ListNews: FC = () => {

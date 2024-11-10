@@ -19,11 +19,13 @@ const Modal: FC<TModal> = ({
 }) => {
   return (
     <Styled.Wrap onClick={onClose}>
-      <Styled.Content onClick={e => e.stopPropagation()}>
+      <Styled.Content
+        onClick={e => {
+          e.stopPropagation()
+        }}
+      >
         <Styled.Header>
-          {Header ? (
-            Header
-          ) : (
+          {Header || (
             <>
               <Styled.Title title={title}>
                 {title}
@@ -34,7 +36,7 @@ const Modal: FC<TModal> = ({
         <Styled.Main>{children}</Styled.Main>
         {hasFooter && (
           <Styled.Footer>
-            {Footer ? Footer : <div>Footer</div>}
+            {Footer || <div>Footer</div>}
           </Styled.Footer>
         )}
       </Styled.Content>

@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
-import { urlsUtils, authKeys, typesCommons } from "@/shared"
+import {
+  urlsUtils,
+  authKeys,
+  type typesCommons,
+} from "@/shared"
 
 type TUrl = string
 

@@ -1,6 +1,5 @@
 import { useState } from "react"
 import type { FC } from "react"
-
 import { Weather, SelectCryptocurrency } from "@/entities"
 import {
   hooksCommons,
@@ -9,7 +8,6 @@ import {
   Preloader,
   Description,
 } from "@/shared"
-
 import * as Styled from "./CryptoWeathers.styled"
 
 /** Have to rework whit component */
@@ -60,8 +58,7 @@ const CryptoWeathers: FC = () => {
         "Error"
       ) : dataSentiment &&
         Boolean(
-          dataSentiment.total[ticker] &&
-            dataSentiment.total[ticker]["Sentiment Score"]
+          dataSentiment.total[ticker]?.["Sentiment Score"]
         ) ? (
         <Weather
           typeWeather={getTypeWeather(

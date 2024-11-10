@@ -1,15 +1,19 @@
 import { lazy, Suspense } from "react"
 import type { FC } from "react"
-
-import * as Styled from "./Weather.styled"
-
 import { Preloader } from "@/shared"
-import { TWeather } from "./Weather.types"
+import * as Styled from "./Weather.styled"
+import { type TWeather } from "./Weather.types"
 
 /** All weathers components */
-const RainComponent = lazy(() => import("../Rain/Rain"))
-const FogComponent = lazy(() => import("../Fog/Fog"))
-const SunnyComponent = lazy(() => import("../Sunny/Sunny"))
+const RainComponent = lazy(
+  async () => await import("../Rain/Rain")
+)
+const FogComponent = lazy(
+  async () => await import("../Fog/Fog")
+)
+const SunnyComponent = lazy(
+  async () => await import("../Sunny/Sunny")
+)
 
 const Weather: FC<TWeather> = ({
   typeWeather,

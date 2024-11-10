@@ -1,5 +1,4 @@
 import type { FC, PropsWithChildren } from "react"
-
 import type { TypesTag } from "@/shared"
 import * as Styled from "./Tag.styled"
 
